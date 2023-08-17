@@ -1,0 +1,45 @@
+lab users-review start
+
+1.----------------------------------------------------
+ssh student@serverb
+
+
+2.----------------------------------------------------
+PASS_MAX_DAYS   30
+
+
+3.----------------------------------------------------
+sudo groupadd -g 35000 consultants
+
+
+4.----------------------------------------------------
+%consultants  ALL=(ALL) ALL
+
+
+5.----------------------------------------------------
+sudo useradd -G consultants consultant1
+sudo useradd -G consultants consultant2
+sudo useradd -G consultants consultant3
+
+6.----------------------------------------------------
+date -d "+90 days" +%F
+
+sudo chage -E 2019-04-28 consultant1
+sudo chage -E 2019-04-28 consultant2
+sudo chage -E 2019-04-28 consultant3
+
+7.----------------------------------------------------
+sudo chage -M 15 consultant2
+
+
+8.----------------------------------------------------
+sudo chage -d 0 consultant1
+sudo chage -d 0 consultant2
+sudo chage -d 0 consultant3
+
+exit
+
+
+----------------------------------------------------
+lab users-review grade
+lab users-review finish
