@@ -7,6 +7,13 @@ man man
 2.----------------------------------------------------
 man -t passwd > passwd.ps
 
+man -t passwd > passwd.ps
+
+ls -al
+
+file /home/student/passwd.ps
+
+less /home/student/passwd.ps
 
 3.----------------------------------------------------
 man -k postscript viewer
